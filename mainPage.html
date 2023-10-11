@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Haunted House</title>
+    <style></style>
+    <link rel = "stylesheet" href = "styles.css" />
+    <script>
+            let userRating = 5;
+            let message = 'Your rating is ${userRating}';
+
+			const addOne = () => {userRating += 1; checkRange(); display();}
+
+			const subtractOne = () => {userRating -= 1; checkRange(); display();}
+
+            function checkRange()
+            {
+                userRating = (userRating > 10) ? (userRating -= 1) : userRating;
+            }
+
+			function display()
+			{
+			    document.getElementById("rating").innerHTML = message;
+			    if (userRating === 10)
+			    {
+			        document.getElementById("rating").innerHTML = Your rating is 10 out of 10! Thank you!;
+			    }
+			}
+
+
+
+		</script>
 </head>
-<body>
-$END$
+
+<body onload = "initialize();">
+<h1>Haunted House</h1>
+<div>
+    Welcome to the very spooky Haunted House! Once you go in, you may never come back out! Be careful where you go, for your own sake...
+</div>
+
+<p>
+    <a href = "rightPath1.html">Enter the Haunted House</a>
+</p>
+
+<p>
+    Rate the Haunted House! (Out of 10)
+</p>
+<button onclick ="addOne()">+1</button>
+<button onclick ="subtractOne()">-1</button>
+<p id = "rating">
+    Your rating: 5
+</p>
+<img src = "HauntedHousePic.jpg" />
 </body>
 </html>
