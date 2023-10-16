@@ -20,13 +20,11 @@
 
             const updateRating = () => {
             document.getElementById("rating").textContent = `Your rating is ${userRating}`;
+            if (userRating === 10)
+            {
+                document.getElementById("rating").textContent = "Your rating is 10 out of 10! Thank you!";
+            }
             };
-
-			    /*if (userRating === 10)
-			    {
-			        document.getElementById("rating").innerHTML = Your rating is 10 out of 10! Thank you!;
-			    }
-			    */
 
 
 
