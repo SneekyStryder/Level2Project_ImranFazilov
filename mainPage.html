@@ -8,23 +8,25 @@
             let userRating = 5;
             let message = 'Your rating is ${userRating}';
 
-			const addOne = () => {userRating += 1; checkRange(); display();}
+            const addOne = () => {
+                userRating = userRating < 10 ? userRating + 1 : userRating;
+                updateRating();
+            };
 
-			const subtractOne = () => {userRating -= 1; checkRange(); display();}
+            const subtractOne = () => {
+                userRating = userRating > 1 ? userRating - 1 : userRating;
+                updateRating();
+            };
 
-            function checkRange()
-            {
-                userRating = (userRating > 10) ? (userRating -= 1) : userRating;
-            }
+            const updateRating = () => {
+            document.getElementById("rating").textContent = `Your rating is ${userRating}`;
+            };
 
-			function display()
-			{
-			    document.getElementById("rating").innerHTML = message;
-			    if (userRating === 10)
+			    /*if (userRating === 10)
 			    {
 			        document.getElementById("rating").innerHTML = Your rating is 10 out of 10! Thank you!;
 			    }
-			}
+			    */
 
 
 
